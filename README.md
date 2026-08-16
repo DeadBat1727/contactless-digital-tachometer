@@ -1,6 +1,3 @@
-# contactless-digital-tachometer
-Arduino-based contactless digital tachometer (RPM meter) using an IR sensor and I2C LCD.
-
 # Contactless Digital Tachometer Using Microcontroller
 
 > Course project (EE 3200 — Electrical & Electronic Project Design), B.Sc. in EEE, Khulna University of Engineering & Technology (KUET)
@@ -14,7 +11,7 @@ Arduino-based contactless digital tachometer (RPM meter) using an IR sensor and 
 
 ## 📖 Overview
 
-A low-cost, **contactless digital tachometer (RPM meter)** that measures the rotational speed of a shaft or disk without any physical contact. An infrared (IR) sensor detects a reflective patch on the rotating object, an **Arduino Uno** calculates the RPM, and the result is shown on a **16×2 I2C LCD**. The whole system runs on a 9V battery, making it portable and self-contained.
+A low-cost, **contactless digital tachometer (RPM meter)** that measures the rotational speed of a shaft or disk without any physical contact. An infrared (IR) sensor detects a reflective patch on the rotating object, an **Arduino Uno** calculates the RPM, and the result is shown on a **16x2 I2C LCD**. The whole system runs on a 9V battery, making it portable and self-contained.
 
 The design deliberately uses pre-assembled modules — no breadboard, soldering, or external resistors required — making it simple, robust, and easy to reproduce.
 
@@ -44,14 +41,17 @@ The system is based on **infrared reflection and pulse counting**:
 |-----------|-----|-----------------------|
 | Arduino Uno | 1 | ATmega328P microcontroller board |
 | IR Sensor Module | 1 | TCRT5000 (built-in resistors + sensitivity potentiometer) |
-| 16×2 LCD with I2C adapter | 1 | I2C interface — only 4 wires (VCC, GND, SDA, SCL) |
+| 16x2 LCD with I2C adapter | 1 | I2C interface — only 4 wires (VCC, GND, SDA, SCL) |
 | 9V Battery + Clip | 1 | Portable power source |
 | Jumper Wires | 4–5 | Male-to-female recommended |
 | Reflective Tape | 1 | Marks the rotating object |
 
 ---
 
-## 🔌 Circuit Connections
+## 🔌 Circuit Diagram & Connections
+
+![Schematic Diagram](Screenshot_20260816-193029.jpg)
+*Figure 1: Schematic diagram*
 
 | From Component | Pin | To Arduino Uno |
 |----------------|-----|----------------|
@@ -63,7 +63,6 @@ The system is based on **infrared reflection and pulse counting**:
 | | SDA | A4 |
 | | SCL | A5 |
 | 9V Battery | + / − | Barrel Jack |
-
 
 ---
 
@@ -78,6 +77,9 @@ The full Arduino sketch is in [`tachometer.ino`](tachometer.ino). It uses a hard
 ---
 
 ## 🛠️ Build & Test
+
+![Prototype](Screenshot_20260816-193042.jpg)
+*Figure 2: Working prototype of the project*
 
 1. **Assembly** — Connect all modules per the circuit table using jumper wires (no soldering needed for a prototype).
 2. **Power** — Connect the 9V battery to the Arduino's barrel jack.
@@ -119,3 +121,5 @@ Supervisor: Dr. Md. Shahjahan, Professor, Dept. of EEE, KUET
 ## 📝 License
 
 Released under the [MIT License](LICENSE).
+
+   
